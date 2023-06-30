@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--Department-->
+        <record id="dep_management" model="hr.department">
+            <field name="name">Phòng Phát Triển Phần Mềm</field>
+        </record>
+
+        <record id="dep_rd" model="hr.department">
+            <field name="name">Phòng Phát Triển Dịch Vụ</field>
+        </record>
+
+        <record id="dep_rd_be" model="hr.department">
+            <field name="name">Phòng Kinh Doanh</field>
+        </record>
+
+        <record id="dep_rd_ltp" model="hr.department">
+            <field name="name">Phòng Tổng Hợp</field>
+        </record>
+
+        <record id="dep_ps" model="hr.department">
+            <field name="name">Phòng Vận Hành Hệ Thống</field>
+        </record>
+
+        <record id="dep_bod" model="hr.department">
+            <field name="name">Ban Giám Đốc</field>
+        </record>
+
+        <record id="dep_ca" model="hr.department">
+            <field name="name">Phòng Kế Toán</field>
+        </record>
+
+
+        <!-- Contract Types -->
+        <record id="contract_type_permanent" model="hr.contract.type">
+            <field name="name">Permanent</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="contract_type_temporary" model="hr.contract.type">
+            <field name="name">Temporary</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="contract_type_interim" model="hr.contract.type">
+            <field name="name">Interim</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <!--Jobs-->
+        <record id="job_ceo" model="hr.job">
+            <field name="name">Tổng Giám Đốc</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="requirements">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="contract_type_id" ref="contract_type_permanent"/>
+        </record>
+
+        <record id="job_cto" model="hr.job">
+            <field name="name">Giám Đốc</field>
+            <field name="department_id" ref="dep_rd"/>
+            <field name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="requirements">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="contract_type_id" ref="contract_type_permanent"/>
+        </record>
+
+        <record id="job_vp" model="hr.job">
+            <field name="name">Phó Giám Đốc</field>
+            <field name="department_id" ref="dep_bod"/>
+            <field name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="requirements">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="contract_type_id" ref="contract_type_permanent"/>
+        </record>
+
+        <record id="job_ca" model="hr.job">
+            <field name="name">Kế Toán Trưởng</field>
+            <field name="department_id" ref="dep_bod"/>
+            <field name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="requirements">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="contract_type_id" ref="contract_type_permanent"/>
+        </record>
+
+        <record id="job_consultant" model="hr.job">
+            <field name="name">Frontend Developer</field>
+            <field name="department_id" ref="dep_ps"/>
+            <field name="no_of_recruitment">5</field>
+            <field name="contract_type_id" ref="contract_type_interim"/>
+        </record>
+
+        <record id="job_developer" model="hr.job">
+            <field name="name">Backend Developer</field>
+            <field name="department_id" ref="dep_rd"/>
+            <field name="no_of_recruitment">5</field>
+            <field name="contract_type_id" ref="contract_type_permanent"/>
+        </record>
+
+        <record id="job_hrm" model="hr.job">
+            <field name="name">Project Manager</field>
+            <field name="department_id" ref="dep_administration"/>
+            <field name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="requirements">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="contract_type_id" ref="contract_type_permanent"/>
+        </record>
+
+        <record id="job_marketing" model="hr.job">
+            <field name="name">Business Analyst</field>
+            <field name="department_id" ref="dep_sales"/>
+        </record>
+
+        <record id="job_trainee" model="hr.job">
+            <field name="name">Trưởng Phòng Phần Mềm</field>
+            <field name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+            <field name="requirements">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</field>
+        </record>
+
+        <!-- Work Locations -->
+
+        <record id="work_location_1" model="hr.work.location">
+            <field name="name">North Star Tower</field>
+            <field name="address_id" ref="base.main_partner" />
+        </record>
+
+        <!-- Employee categories -->
+
+        <record id="employee_category_2" model="hr.employee.category">
+            <field name="name">Sales</field>
+            <field name="color" eval="1"/>
+        </record>
+
+        <record id="employee_category_3" model="hr.employee.category">
+            <field name="name">Trainer</field>
+            <field name="color" eval="2"/>
+        </record>
+
+        <record id="employee_category_4" model="hr.employee.category">
+            <field name="name">Employee</field>
+            <field name="color" eval="6"/>
+        </record>
+
+        <record id="employee_category_5" model="hr.employee.category">
+            <field name="name">BOD</field>
+            <field name="color" eval="4"/>
+        </record>
+
+        <!-- Address -->
+
+        <record id="hr.res_partner_admin_private_address" model="res.partner">
+            <field name="name">Trần Quốc Việt</field>
+            <field name="street">215 Vine St</field>
+            <field name="city">Scranton</field>
+            <field name="zip">18503</field>
+            <field name="country_id" ref="base.us"/>
+            <field name='state_id' ref="base.state_us_39"/>
+            <field name="phone">+1 555-555-5555</field>
+            <field name="email">admin@dts.com.vn</field>
+            <field name="create_date">2023-01-01 00:00:00</field>
+            <field name="type">private</field>
+        </record>
+        <!--Employees-->
+
+        <record id="employee_admin" model="hr.employee">
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(237)-125-2389</field>
+            <field name="work_email">admin@dts.com.vn</field>
+            <field name="job_id" ref="hr.job_ceo"/>
+            <field name="job_title">Tổng Giám Đốc</field>
+            <!-- <field name="department_id" ref="dep_management"/> -->
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="work_contact_al" model="res.partner">
+            <field name="name">Bùi Đình Khánh</field>
+            <field name="email">khanhbd@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_al-image.jpg"/>
+        </record>
+
+        <record id="employee_al" model="hr.employee">
+            <field name="name">Bùi Đình Khánh</field>
+            <field name="department_id" ref="dep_bod"/>
+            <field name="parent_id" ref="employee_admin"/>
+            <field name="job_id" ref="hr.job_cto"/>
+            <field name="job_title">Giám Đốc</field>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(376)-310-7863</field>
+            <field name="work_contact_id" ref="hr.work_contact_al"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_al-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Duy Linh</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">linhnd@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi" model="res.partner">
+            <field name="name">Nguyễn Duy Linh</field>
+            <field name="email">linhnd@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi" model="hr.employee">
+            <field name="name">Nguyễn Duy Linh</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_al"/>
+            <field name="job_id" ref="hr.job_trainee"/>
+            <field name="job_title">Trưởng Phòng Phần Mềm</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Lê Quang Chiểu</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">chieulq@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_clq" model="res.partner">
+            <field name="name">Lê Quang Chiểu</field>
+            <field name="email">chieulq@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_clq" model="hr.employee">
+            <field name="name">Lê Quang Chiểu</field>
+            <field name="department_id" ref="dep_ps"/>
+            <field name="parent_id" ref="employee_al"/>
+            <field name="job_id" ref="hr.job_vp"/>
+            <field name="job_title">Phó Giám Đốc</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_5')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_clq"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Thanh Thảo</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">thaont@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_thaont" model="res.partner">
+            <field name="name">Nguyễn Thanh Thảo</field>
+            <field name="email">thaont@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_thaont" model="hr.employee">
+            <field name="name">Nguyễn Thanh Thảo</field>
+            <field name="department_id" ref="dep_ca"/>
+            <field name="parent_id" ref="employee_al"/>
+            <field name="job_id" ref="hr.job_ca"/>
+            <field name="job_title">Kế Toán Trưởng</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_5')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_thaont"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Đức Hoàng</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">hoangnd@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_hoangnd" model="res.partner">
+            <field name="name">Nguyễn Đức Hoàng</field>
+            <field name="email">hoangnd@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_hoangnd" model="hr.employee">
+            <field name="name">Nguyễn Đức Hoàng</field>
+            <field name="department_id" ref="dep_rd_be"/>
+            <field name="parent_id" ref="employee_al"/>
+            <field name="job_id" ref="hr.job_vp"/>
+            <field name="job_title">Phó Giám Đốc</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_5')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_hoangnd"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Hoàng Minh</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">minhnh@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_minhnh" model="res.partner">
+            <field name="name">Nguyễn Hoàng Minh</field>
+            <field name="email">minhnh@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_minhnh" model="hr.employee">
+            <field name="name">Nguyễn Hoàng Minh</field>
+            <field name="department_id" ref="dep_rd"/>
+            <field name="parent_id" ref="employee_al"/>
+            <field name="job_id" ref="hr.job_ca"/>
+            <field name="job_title">Phó Giám Đốc</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_5')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_minhnh"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Lê Hoàng Anh</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">anhlh@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_alh" model="res.partner">
+            <field name="name">Lê Hoàng Anh</field>
+            <field name="email">anhlh@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_alh" model="hr.employee">
+            <field name="name">Lê Hoàng Anh</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_consultant"/>
+            <field name="job_title">Frontend Developer</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_alh"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Văn Long</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">longnv@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_lnv" model="res.partner">
+            <field name="name">Nguyễn Văn Long</field>
+            <field name="email">longnv@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_lnv" model="hr.employee">
+            <field name="name">Nguyễn Văn Long</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_consultant"/>
+            <field name="job_title">Frontend Developer</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_lnv"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Trần Quang Vinh</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">vinhq@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_vtq" model="res.partner">
+            <field name="name">Trần Quang Vinh</field>
+            <field name="email">vinhq@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_vtq" model="hr.employee">
+            <field name="name">Trần Quang Vinh</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_consultant"/>
+            <field name="job_title">Frontend Developer</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_vtq"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Đinh Khánh Duy</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">duydk@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_ddk" model="res.partner">
+            <field name="name">Đinh Khánh Duy</field>
+            <field name="email">duydk@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_ddk" model="hr.employee">
+            <field name="name">Đinh Khánh Duy</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_consultant"/>
+            <field name="job_title">Frontend Developer</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_ddk"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Quyết Thắng</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">thangnq@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_tnq" model="res.partner">
+            <field name="name">Nguyễn Quyết Thắng</field>
+            <field name="email">thangnq@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_tnq" model="hr.employee">
+            <field name="name">Nguyễn Quyết Thắng</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_developer"/>
+            <field name="job_title">Backend Developer</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_tnq"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Đức Quyết</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">quyetnd@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_qnd" model="res.partner">
+            <field name="name">Nguyễn Đức Quyết</field>
+            <field name="email">quyetnd@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_qnd" model="hr.employee">
+            <field name="name">Nguyễn Đức Quyết</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_developer"/>
+            <field name="job_title">Backend Developer</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_qnd"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Bùi Đình Thiên Tình</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">tinhbdt@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_tdbt" model="res.partner">
+            <field name="name">Bùi Đình Thiên Tình</field>
+            <field name="email">tinhbdt@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_tdbt" model="hr.employee">
+            <field name="name">Bùi Đình Thiên Tình</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_developer"/>
+            <field name="job_title">Backend Developer</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_tdbt"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Phạm Diệu Huyền</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">huyenpd@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_hpd" model="res.partner">
+            <field name="name">Phạm Diệu Huyền</field>
+            <field name="email">huyenpd@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_hpd" model="hr.employee">
+            <field name="name">Phạm Diệu Huyền</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_marketing"/>
+            <field name="job_title">Business Analyst</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_hpd"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Minh Anh</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">anhnm@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_anm" model="res.partner">
+            <field name="name">Nguyễn Minh Anh</field>
+            <field name="email">anhnm@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_anm" model="hr.employee">
+            <field name="name">Nguyễn Minh Anh</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_marketing"/>
+            <field name="job_title">Business Analyst</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_anm"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+
+        <record id="res_partner_fpi_private_address" model="res.partner">
+            <field name="name">Nguyễn Thị Hà Anh</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">anhnth@metaserv.vn</field>
+            <field name="type">private</field>
+        </record>
+
+        <record id="work_contact_fpi_anth" model="res.partner">
+            <field name="name">Nguyễn Thị Hà Anh</field>
+            <field name="email">anhnth@metaserv.vn</field>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+        </record>
+
+        <record id="employee_fpi_anth" model="hr.employee">
+            <field name="name">Nguyễn Thị Hà Anh</field>
+            <field name="department_id" ref="dep_management"/>
+            <field name="parent_id" ref="employee_fpi"/>
+            <field name="job_id" ref="hr.job_marketing"/>
+            <field name="job_title">Business Analyst</field>
+            <field name="category_ids" eval="[(6, 0, [ref('employee_category_4')])]"/>
+            <field name="address_home_id" ref="hr.res_partner_fpi_private_address"/>
+            <field name="work_location_id" ref="work_location_1"/>
+            <field name="work_phone">(203)-276-7903</field>
+            <field name="work_contact_id" ref="hr.work_contact_fpi_anth"/>
+            <field name="image_1920" type="base64" file="hr/static/img/employee_fpi-image.jpg"/>
+            <field name="create_date">2023-01-01 00:00:00</field>
+        </record>
+    </data>
+</odoo>

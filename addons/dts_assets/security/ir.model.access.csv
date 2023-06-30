@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dts_assets_user,dts_assets.user,model_dts_assets,base.group_user,1,0,1,0
+access_dts_assets_manager,dts_assets.manager,model_dts_assets,base.group_user,1,1,1,1
+access_dts_assets_president,dts_assets.president,model_dts_assets,base.group_user,1,1,1,1
+access_dts_assets_general_director,dts_assets.general_director,model_dts_assets,base.group_user,1,1,1,1
+
+access_dts_assets_table_user,dts_assets_table.user,model_dts_assets_table,base.group_user,1,0,1,0
+access_dts_assets_table_manager,dts_assets_table.manager,model_dts_assets_table,base.group_user,1,1,1,1
+access_dts_assets_table_president,dts_assets_table.president,model_dts_assets_table,base.group_user,1,1,1,1
+access_dts_assets_table_general_director,dts_assets_table.general_director,model_dts_assets_table,base.group_user,1,1,1,1

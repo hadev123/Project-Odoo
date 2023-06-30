@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="dts_assets_table_tree_view" model="ir.ui.view">
+            <field name="name">dts_assets_table.tree.view</field>
+            <field name="model">dts_assets_table</field>
+            <field name="arch" type="xml">
+                <tree string="AssetsTable">
+                    <field name="name_propose_asset" />
+                    <field name="quantity_assets" />
+                    <field name="asset_id" />
+                    <field name="reference_price" />
+                    <field name="name_code_property_use" />
+                    <field name="total_asset" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="dts_assets_table_form_view" model="ir.ui.view">
+            <field name="name">dts_assets_table.form.view</field>
+            <field name="model">dts_assets_table</field>
+            <field name="arch" type="xml">
+                <form string="AssetsTable">
+                    <sheet>
+                        <group>
+                            <field name="name_propose_asset" />
+                            <field name="quantity_assets" />
+                            <field name="asset_id" />
+                            <field name="reference_price" />
+                            <field name="name_code_property_use" />
+                            <field name="total_asset" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

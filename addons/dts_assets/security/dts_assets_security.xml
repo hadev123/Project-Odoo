@@ -1,0 +1,44 @@
+<odoo>
+    <data noupdate="0">
+        <record id="module_category_assets" model="ir.module.category">
+            <field name="name">Assets Name</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="group_dts_assets_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_assets"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_dts_assets_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_category_assets"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_dts_assets_president" model="res.groups">
+            <field name="name">President</field>
+            <field name="category_id" ref="module_category_assets"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_dts_assets_general_director" model="res.groups">
+            <field name="name">General Director</field>
+            <field name="category_id" ref="module_category_assets"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="dts_assets_rule" model="ir.rule">
+            <field name="name">Assets Name</field>
+            <field name="model_id" ref="model_dts_assets"/>
+            <!-- <field name="domain_force">[('reference_price', '!=',5000000)]</field> -->
+            <field name="perm_read"/>
+            <field name="perm_write"/>
+            <field name="perm_create"/>
+            <field name="perm_unlink"/>
+        </record>
+    </data>
+</odoo>
